@@ -164,3 +164,22 @@ function truncateString(str, num) {
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+
+
+//------------------------------------------------------------------------------------------------
+
+//Chunky Monkey 
+//Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+
+function chunkArrayInGroups(arr, size) {
+
+  var arrSlice = [];
+  for (var i = 0; i < arr.length/size; i++){
+    arrSlice.push(arr.slice(i*size, i*size + size));
+  }
+  return arrSlice;
+}
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+//------------------------------------------------------------------------------------------------
+
