@@ -249,3 +249,23 @@ function bouncer(arr) {
 bouncer([7, "ate", "", false, 9]);
 
 //------------------------------------------------------------------------------------------------
+
+//Seek and Destroy
+//You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+function destroyer(arr) {
+  
+  for(var j = 1; j < arguments.length; j++)
+    for(var i = arr.length - 1; i >= 0; i--) {
+      if(arr[i] === arguments[j]) {
+         arr.splice(i, 1);
+      }
+  }
+  
+  return arr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+//------------------------------------------------------------------------------------------------
+
