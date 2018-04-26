@@ -221,3 +221,31 @@ function mutation(arr) {
 mutation(["voodoo", "no"]);
 
 //------------------------------------------------------------------------------------------------
+
+//Falsy Bouncer
+//Remove all falsy values from an array.
+
+function bouncer(arr) {
+  function filtNow(value) {
+   if (value === false) {
+     console.log("false");
+   } else if (value === null) {
+     console.log("null");
+   } else if (value === 0) {
+     console.log("0");
+   } else if (value === "") {
+     console.log("''''");
+   } else if (value === undefined) {
+     console.log("undefined");   
+   } else if (value === isNaN) {
+     console.log("NaN");     
+   } else {return value;}
+
+  }
+  
+  return arr.filter(filtNow);
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+//------------------------------------------------------------------------------------------------
