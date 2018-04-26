@@ -269,3 +269,27 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 //------------------------------------------------------------------------------------------------
 
+//Where do I belong
+//Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+function getIndexToIns(arr, num) {
+  arr = arr.sort(function(a,b){
+    return a-b;
+  });
+  var place = 0;
+  for (i=0;i<arr.length;i++){
+    if (num > arr[i] && num < arr[i+1]) {
+      place = i+1;
+    } else if (num === arr[i]) {
+      place = i;
+    } else if (num > arr[arr.length-1]) {
+      place = arr.length;
+    }
+  }
+  
+  return place;
+}
+
+getIndexToIns([10, 20, 30, 40, 50], 30);
+
+//------------------------------------------------------------------------------------------------
