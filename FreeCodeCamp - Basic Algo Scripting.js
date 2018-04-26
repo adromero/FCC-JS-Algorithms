@@ -293,3 +293,32 @@ function getIndexToIns(arr, num) {
 getIndexToIns([10, 20, 30, 40, 50], 30);
 
 //------------------------------------------------------------------------------------------------
+
+//Caesars Cipher
+//One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.
+
+
+function rot13(str) { // LBH QVQ VG!
+  
+  var newArr = [];
+
+  for (i=0;i<str.length;i++){
+    if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
+      if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 77) {
+        newArr.push(String.fromCharCode(str.charCodeAt(i) + 13));
+      } else {
+        newArr.push(String.fromCharCode(str.charCodeAt(i) - 13));
+      }
+    } else {
+      newArr.push(String.fromCharCode(str.charCodeAt(i)));
+    }
+    console.log("DEBUG === "+ str.charCodeAt(i) + "\nnewArr === " + newArr);
+  }
+  
+  return newArr.join('');
+
+}
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
+
+//------------------------------------------------------------------------------------------------
