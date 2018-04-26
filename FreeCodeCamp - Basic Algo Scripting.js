@@ -193,3 +193,31 @@ function slasher(arr, howMany) {
 slasher([1, 2, 3], 2);
 
 //------------------------------------------------------------------------------------------------
+
+//Mutations
+//Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+
+function mutation(arr) {
+ 
+  var counter = 0;
+  arr[0] = arr[0].toLowerCase();
+  arr[1] = arr[1].toLowerCase();
+  
+  for (var j = 0; j < arr[1].length; j++) {
+      if (arr[0].indexOf(arr[1][j]) !== -1) {
+        counter += 1;
+      }
+  }
+  
+  console.log("Counter length== " + counter + "\narr[1].length== " + arr[1].length);
+  
+  if (counter === arr[1].length){
+    return true;
+  } else {return false;
+         }
+}        
+
+mutation(["voodoo", "no"]);
+
+//------------------------------------------------------------------------------------------------
